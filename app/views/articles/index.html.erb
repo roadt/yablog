@@ -8,6 +8,7 @@
       <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:title) %></th>
       <th><%= model_class.human_attribute_name(:author) %></th>
+      <th><%= model_class.human_attribute_name(:likes_count) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
@@ -19,6 +20,7 @@
         <td><%= link_to article.id, article_path(article) %></td>
         <td><%= link_to article.title, article_path(article) %></td>
         <td><%= article.user.email %></td>
+        <td><%= article.likes.count %></td>
         <td><%=l article.created_at %></td>
         <td>
           <%  if can? :update, article %>

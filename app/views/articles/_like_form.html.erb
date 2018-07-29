@@ -1,0 +1,17 @@
+<%= form_with(model: Like.new , url: likes_path, id: 'new_like', :class => "form-horizontal like" ) do |f| %>
+  <div class="form-group">
+    <div class="col-lg-12">
+      <%= f.text_area :content, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:content) %>
+  </div>
+  <%= f.hidden_field :likeable_type, value: 'Article', :class => 'form-control' %>
+  <%= f.hidden_field :likeable_id, value: @article.id, :class => 'form-control' %>
+ 
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+    </div>
+  </div>
+
+<% end %>

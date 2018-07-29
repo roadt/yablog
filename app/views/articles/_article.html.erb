@@ -1,7 +1,7 @@
 <div id="article-<%= article.id %>" class="article">
     
     <h2 class="text-center"><%= @article.title %> 
-    <span class="pull-right"><%= render partial:"articles/buttons"%>
+    <span class="pull-right"><%= render partial:"articles/buttons", locals: { article: article }%>
 </span></h2>
    
     <p class="well well-lg content">
