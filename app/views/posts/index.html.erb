@@ -19,9 +19,22 @@
         <td><%= link_to post.id, post_path(post) %></td>
         <td><%= link_to post.title, post_path(post) %></td>
         <td><%= post.likes_count %></td>
-        <td><%= post.user.email %></td>
+        <td><%= link_to post.user.email, user_path(post.user) %></td>
+
         <td><%=l post.created_at %></td>
-       
+        <td>
+          <%  if can? :update, post %>
+            <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_post_path(post), :class => 'btn btn-default btn-xs' %>
+          <% end %>
+          <% if can? :destroy, post %>  
+            <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      post_path(post),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-xs btn-danger' %>
+          <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>

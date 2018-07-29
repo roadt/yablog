@@ -1,6 +1,6 @@
 <div class="buttons">
   <%= link_to t('.back', :default => t("helpers.links.back")),
-                articles_path, :class => 'btn btn-default'  %>
+                :back, :class => 'btn btn-default'  %>
   <% if can? :update, article %>
 
   <%= link_to t('.edit', :default => t("helpers.links.edit")),

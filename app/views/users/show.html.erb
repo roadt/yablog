@@ -1,10 +1,9 @@
+
+
+
+
+<h2><%= @user.email%> Liked Items</h2>
 <%- model_class = FeedItem -%>
-<div class="page-header">
-  <h1>Feed Items (Most Liked Stars>3)</h1>
-
-
-  <%= link_to 'All Feed Items', home_index_path, class:'btn btn-primary'%>
-</div>
 <table class="table table-striped">
   <thead>
     <tr>
@@ -28,8 +27,6 @@
         <td><%= link_to feed_item.title, feed_item.ref %></td>
         <td><%= feed_item.likes_count %></td>
         <td><%= link_to feed_item.user.email, user_path(feed_item.user) %></td>
-        <td><%=l feed_item.created_at %></td>
-
         
         <td><%=l feed_item.created_at %></td>
           <td>
@@ -38,6 +35,7 @@
           <% end %>
           </ul>
         </td>
+
       </tr>
     <% end %>
   </tbody>

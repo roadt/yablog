@@ -27,7 +27,7 @@
         <td><%= link_to "#{feed_item.ref_type}-#{feed_item.ref_id}", feed_item.ref %></td>
         <td><%= link_to feed_item.title, feed_item.ref %></td>
         <td><%= feed_item.likes_count %></td>
-        <td><%= feed_item.user.email %></td>
+        <td><%= link_to feed_item.user.email, user_path(feed_item.user) %></td>
         
         <td><%=l feed_item.created_at %></td>
           <td>
