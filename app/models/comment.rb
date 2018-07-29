@@ -3,5 +3,7 @@ class Comment < ApplicationRecord
   validates :user_id, presence: true
   
   belongs_to :user
-  belongs_to :commentable, polymorphic: true
+  belongs_to :commentable, polymorphic: true, counter_cache: true
+
+  default_scope { order(created_at: :desc) }
 end

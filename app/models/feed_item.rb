@@ -1,0 +1,3 @@
+class FeedItem < ActiveRecord
+    
+end

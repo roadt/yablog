@@ -5,7 +5,11 @@ class ArticlesController < ApplicationController
   # GET /articles
   # GET /articles.json
   def index
-    @articles = Article.page(params[:page])
+    @articles = Article.includes(:comments).order(created_at: :desc).page(params[:page])
+  end
+
+  def most_liked
+    @articles = Article.includes(:comments).where("likes_count > 3").order(created_at: :desc).page(params[:page])
   end
 
   # GET /articles/1

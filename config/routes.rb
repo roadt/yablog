@@ -2,11 +2,20 @@ Rails.application.routes.draw do
 
   resources :likes
   resources :comments
-  
-  resources :articles do 
-      resources :comments
+
+
+  resources :articles do
+    collection do
+      get :most_liked
+    end 
+    resources :comments
   end 
 
+  
+  resources :posts do 
+    resources :comments
+  end
+ 
   get 'home/index'
   
   devise_for :users

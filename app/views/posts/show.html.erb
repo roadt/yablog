@@ -1,0 +1,16 @@
+<%- model_class = Post -%>
+
+
+
+<%= render @post %>
+
+
+<div id="post_<%= @post.id %>_comments" class="comments post_comments">
+  <h3>Comments</h3>
+  <hr/>
+  <%= render @post.comments %>
+</div>
+
+<div id="post_<%= @post.id %>_comment_add" class="comment_add ">
+  <%= render 'comment_form' %>
+</div>
