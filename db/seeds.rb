@@ -5,3 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+u = User.find_or_create_by(email: "admin@localhost")
+
+(1..100).each do |i|
+  Article.find_or_create_by(title: "title #{i}", content: "content #{i}", user: u)
+end

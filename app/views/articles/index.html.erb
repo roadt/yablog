@@ -1,6 +1,9 @@
-<%- model_class = Article -%>
+<%- model_class = Article -%>  
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %><%= link_to t('.new', :default => t("helpers.links.new")),
+            new_article_path,
+            :class => 'btn btn-primary pull-right' %>
+</h1>
 </div>
 <table class="table table-striped">
   <thead>
@@ -39,7 +42,5 @@
     <% end %>
   </tbody>
 </table>
+<%= paginate @articles %>
 
-<%= link_to t('.new', :default => t("helpers.links.new")),
-            new_article_path,
-            :class => 'btn btn-primary' %>

@@ -72,3 +72,5 @@ gem 'cancancan'
 
 gem 'jquery-rails'
 
+gem 'kaminari'
+
