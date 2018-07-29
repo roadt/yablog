@@ -1,0 +1,17 @@
+<%= form_with(model: Comment.new , url: article_comments_path(@article), id: 'new_comment', :class => "form-horizontal comment" ) do |f| %>
+  <div class="form-group">
+    <div class="col-lg-12">
+      <%= f.text_area :content, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:content) %>
+  </div>
+  <%= f.hidden_field :commentable_type, value: 'Article', :class => 'form-control' %>
+  <%= f.hidden_field :commentable_id, value: @article.id, :class => 'form-control' %>
+ 
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+    </div>
+  </div>
+
+<% end %>

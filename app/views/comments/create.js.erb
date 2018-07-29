@@ -1,0 +1,10 @@
+
+comments_box = $("#<%= @comment.commentable_type.downcase %>_<%= @comment.commentable_id %>_comments");
+comments_form = $("#<%= @comment.commentable_type.downcase %>_<%= @comment.commentable_id %>_comment_add");
+<% if @success %>
+comment_line = '<%= j(render(partial:"comment", object: @comment)) %>';
+comments_box.append(comment_line);
+$("textarea",comments_form).val("").focus();
+<% else %>
+$("textarea",comments_form).focus();
+<% end %>

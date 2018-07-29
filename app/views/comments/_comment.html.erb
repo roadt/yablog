@@ -1,0 +1,12 @@
+
+<div id="comment_<%=comment.id%>" class="comment" 
+    data-target-type="<%=comment.commentable_type%>" data-target-id="<%= comment.commentable_id%>">
+
+    <h4><%= comment.user.email %>:<span class="pull-right"><%= render partial:'comments/buttons', locals: { comment: comment} %></h4>  
+    
+    
+    
+    <div class="well">
+        <%= comment.content %>
+    </div>
+</div>

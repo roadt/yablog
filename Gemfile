@@ -69,3 +69,6 @@ gem 'devise-bootstrap-views'
 
 gem "twitter-bootstrap-rails"
 gem 'cancancan'
+
+gem 'jquery-rails'
+

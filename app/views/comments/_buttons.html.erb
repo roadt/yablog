@@ -1,0 +1,17 @@
+
+<% if false %>
+<% if can? :update, comment %>
+    <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                edit_comment_path(comment), :class => 'btn btn-default' %>
+    <% end %>
+    <% end %>
+
+
+<% if can? :destroy, comment %>
+<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              comment_path(comment),
+              :method => 'delete',
+              remote: true,
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger btn-xs' %>
+<% end %>

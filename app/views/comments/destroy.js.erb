@@ -1,0 +1,2 @@
+comments_box = $("#<%= @comment.commentable_type.downcase %>_<%= @comment.commentable_id %>_comments");
+$("#comment_<%=@comment.id%>", comments_box).remove()

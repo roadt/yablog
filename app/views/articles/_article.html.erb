@@ -1,0 +1,11 @@
+<div id="article-<%= article.id %>" class="article">
+    
+    <h2 class="text-center"><%= @article.title %> 
+    <span class="pull-right"><%= render partial:"articles/buttons"%>
+</span></h2>
+   
+    <p class="well well-lg content">
+        <%= @article.content %>
+    </p>
+</div>
+
