@@ -1,9 +1,9 @@
 <%- model_class = FeedItem -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+  <h1>Feed Items (Most Liked Stars>3)</h1>
 
-  <%= link_to 'Most Liked', home_most_liked_path, class:'btn btn-primary'%>
 
+  <%= link_to 'All Feed Items', home_index_path, class:'btn btn-primary'%>
 </div>
 <table class="table table-striped">
   <thead>
@@ -28,6 +28,8 @@
         <td><%= link_to feed_item.title, feed_item.ref %></td>
         <td><%= feed_item.likes_count %></td>
         <td><%= feed_item.user.email %></td>
+        <td><%=l feed_item.created_at %></td>
+
         
         <td><%=l feed_item.created_at %></td>
           <td>
@@ -36,7 +38,6 @@
           <% end %>
           </ul>
         </td>
-
       </tr>
     <% end %>
   </tbody>
