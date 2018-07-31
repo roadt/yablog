@@ -30,7 +30,7 @@
         <td><%= article.likes_count %></td>
         
         <td>
-          <ul><% article.comments.limit(3).each do |comment|%>
+          <ul><% article.comments[0,3].each do |comment|%>
           <li><%= comment.content %></li>
           <% end %>
           </ul>

@@ -30,7 +30,7 @@
         
         <td><%=l feed_item.created_at %></td>
           <td>
-          <ul><%  feed_item.ref.comments.limit(3).each do |comment|%>
+          <ul><%  feed_item.ref.comments[0,3].each do |comment|%>
           <li><%= comment.content %></li>
           <% end %>
           </ul>
